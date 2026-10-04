@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: FSL-1.1-MIT */
 
-/* Atkinson Hyperlegible Next + Mono — self-hosted, variable (SIL OFL).
+/* Atkinson Hyperlegible Next + Mono: self-hosted, variable (SIL OFL).
    Community-maintained (Braille Institute); latin subset, one file per family. */
 @font-face {
 	font-family: "Atkinson Hyperlegible Next";
@@ -18,7 +18,7 @@
 	src: url(fonts/atkinson-hyperlegible-mono-latin-wght-normal.woff2) format("woff2");
 }
 
-/* Shade Mono — a glyph subset of Noto Sans Mono (SIL OFL) covering box drawing
+/* Shade Mono: a glyph subset of Noto Sans Mono (SIL OFL) covering box drawing
    + shade blocks (U+2500–U+2593). Pins the open-book mark (░▓) and the
    bookshelf's spines and frame so they render identically on every machine.
    Rebuild with:

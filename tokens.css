@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: FSL-1.1-MIT */
 
-/* Runbooks design tokens — dark-first.
+/* Runbooks design tokens: dark-first.
    Palette seeded from the mallard: head green #3D6756 (brand), wing slate #363341
    (surfaces), neck lavender #ACAFC4 (text), speculum #7B8CAB (links/info), chest
    oxblood #54140A (danger); the bill amber #E0A94C is derived for warn. Status is
@@ -44,7 +44,7 @@
 	--row-hover: #24232e;
 	--row-sel: rgba(61, 103, 86, 0.22);
 
-	/* Code surfaces stay dark in both themes, so their colours are constants —
+	/* Code surfaces stay dark in both themes, so their colours are constants: 
 	   never theme roles, or a light-theme token renders dark-on-dark. */
 	--code-bg: #111;
 	--code-border: #2a2a2a;
@@ -58,7 +58,7 @@
 	--tip-text: #e9eaf1;
 	--tip-border: rgba(106, 168, 141, 0.3);
 
-	/* Spacing scale — `hair` is the sub-scale gap/hairline below space-1. */
+	/* Spacing scale: `hair` is the sub-scale gap/hairline below space-1. */
 	--space-hair: 2px;
 	--space-0: 0px;
 	--space-1: 4px;
@@ -78,10 +78,10 @@
 	--notes-width: 460px; /* the notes overlay's width; JS overrides it when dragged */
 
 	/* Component sizing */
-	--ctrl-pad-y: 7px; /* vertical padding that sets interactive control height — btn, input, select */
+	--ctrl-pad-y: 7px; /* vertical padding that sets interactive control height: btn, input, select */
 	--size-step-num: 26px; /* the step-number badge; the collapsed-step indent derives from it */
 
-	/* Type — Atkinson Hyperlegible Next (UI) + Mono (commands) */
+	/* Type: Atkinson Hyperlegible Next (UI) + Mono (commands) */
 	--font-sans: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, -apple-system, sans-serif;
 	--font-mono: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
 	/* The shade glyphs (░▒▓) are not in Atkinson; a tiny pinned subset keeps the
@@ -92,7 +92,7 @@
 	   appearance preference switches this to 500. */
 	--mono-weight: 450;
 
-	/* Type scale — compact/dense. The S/M/L reading-size preference sets
+	/* Type scale: compact/dense. The S/M/L reading-size preference sets
 	   --text-scale, which moves the whole scale and nothing else (spacing and
 	   structural sizes stay put). */
 	--text-scale: 1;
@@ -112,7 +112,7 @@
 	--leading-snug: 1.375;
 	--leading-normal: 1.5;
 
-	/* Radius scale — squared off: this is an operator tool, not a consumer app. */
+	/* Radius scale: squared off: this is an operator tool, not a consumer app. */
 	--radius-sm: 4px;
 	--radius-md: 6px; /* same as --radius */
 	--radius-lg: 8px;
@@ -188,7 +188,7 @@ body {
 	font-size: 1em;
 }
 
-/* Compact density for 1366–1439px — everything is slightly smaller to reclaim space */
+/* Compact density for 1366–1439px: everything is slightly smaller to reclaim space */
 @media (max-width: 1439px) {
 	:root {
 		--size-app-sidebar: 196px;
