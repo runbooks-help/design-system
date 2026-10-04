@@ -44,7 +44,7 @@
 	--row-hover: #24232e;
 	--row-sel: rgba(61, 103, 86, 0.22);
 
-	/* Code surfaces stay dark in both themes, so their colours are constants: 
+	/* Code surfaces stay dark in both themes, so their colours are constants:
 	   never theme roles, or a light-theme token renders dark-on-dark. */
 	--code-bg: #111;
 	--code-border: #2a2a2a;
