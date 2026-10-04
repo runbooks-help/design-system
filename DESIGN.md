@@ -1,0 +1,60 @@
+# The Runbooks design language
+
+The documented contract for `tokens.css`. Use the tokens, never raw values.
+
+## Palette
+
+Dark-first: `:root` is the dark theme, and `html[data-theme="light"]` overrides
+it. Both themes are first-class; nothing may hard-code a theme-specific colour.
+
+The palette is seeded from the mallard; each seed takes a **role** rather than
+becoming an accent.
+
+| Role | Seed | Tokens |
+|---|---|---|
+| Brand / accent | head green `#3D6756` | `--accent`, `--accent-strong`, `--accent-lt`, `--on-accent` |
+| Surfaces & chrome | wing slate `#363341` | `--bg`, `--surface`, `--surface-2`, `--nav-*`, `--border*` |
+| Text / muted | neck lavender `#ACAFC4` | `--text`, `--muted` |
+| Links · info · focus | speculum periwinkle `#7B8CAB` | `--link` |
+| Danger | chest oxblood `#54140A` | `--danger` |
+| Warn | bill amber `#E0A94C` *(derived)* | `--warn` |
+
+Rules:
+
+- **Status is never the brand.** `--success`, `--warn`, `--danger` and the link
+  colour are distinct from `--accent`, so a "done" check, a destructive badge and
+  a link are never confused.
+- **Code surfaces stay dark in both themes.** Use the constant `--code-*` tokens;
+  a theme role inside a code block renders dark-on-dark in the light theme.
+- Motion and shadows have tokens (`--duration-*`, `--ease`, `--shadow-sm|-md|-lg`).
+  Do not invent values.
+
+## Typography
+
+- UI text: **Atkinson Hyperlegible Next** (`--font-sans`). Commands and code:
+  **Atkinson Hyperlegible Mono** (`--font-mono`). Both variable, latin, SIL OFL.
+- `--font-shade` is **Shade Mono**, a tiny subset of Noto Sans Mono covering box
+  drawing and shade blocks (`░▒▓`). Atkinson does not contain those glyphs, so the
+  subset pins the brand mark and any box-drawing chrome instead of the OS
+  fallback.
+- Code weight: `--mono-weight` is 450, or 600 under the bold-code preference.
+- The type scale is `--text-2xs … --text-2xl`, all multiplied by `--text-scale`.
+  The reading-size preference moves `--text-scale` and nothing else — spacing and
+  structural sizes stay put.
+- The prose measure caps at `--measure` (72ch); tables and code keep the column.
+
+## Shape, spacing and density
+
+- Radii are squared off: `--radius-sm|md|lg` (4/6/8px). Tickboxes are square.
+- Spacing comes from `--space-hair … --space-7`; no raw px in margin, padding or
+  gap. `--space-hair` is the sub-scale gap below `--space-1`.
+- Interactive control height comes from `--ctrl-pad-y`, so buttons, inputs and
+  selects line up.
+- Badges are bracketed `[ label ]`, not filled pills.
+- Dark-on-light strokes read thinner, hence `--mono-weight: 450` by default.
+
+## Full contract
+
+The app's live styleguide (`/styleguide`) and its agent-readable mirror
+(`/styleguide/llms`) are the full contract — foundations and every component,
+rendered from the real components so they cannot silently drift.
