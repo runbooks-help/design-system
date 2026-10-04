@@ -1,0 +1,6 @@
+[tools]
+go = "latest"
+
+[tasks.brand]
+description = "Generate the brand assets into brand/ and favicon.svg (needs woff2_decompress, inkscape, rsvg-convert)"
+run = "go run ./cmd/brand"

@@ -1,7 +1,8 @@
 name: Release
 
 # A tag publishes the design language as pinned release assets: tokens.css,
-# fonts.css and the fonts bundle. Consumers fetch the tag they pin.
+# fonts.css, the fonts bundle, and the brand bundle (brand/ + favicon.svg).
+# Consumers fetch the tag they pin.
 
 on:
   push:
@@ -19,7 +20,10 @@ jobs:
       - name: Bundle the fonts
         run: tar czf fonts.tar.gz fonts
 
+      - name: Bundle the brand assets
+        run: tar czf brand.tar.gz brand favicon.svg
+
       - name: Create the release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${GITHUB_REF_NAME}" tokens.css fonts.css fonts.tar.gz --generate-notes
+        run: gh release create "${GITHUB_REF_NAME}" tokens.css fonts.css fonts.tar.gz brand.tar.gz favicon.svg --generate-notes

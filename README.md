@@ -12,6 +12,12 @@ later) consumes the same values by **pinned version** rather than copying them.
 - `fonts/` — Atkinson Hyperlegible Next + Mono (variable, latin; SIL OFL) and the
   Shade Mono subset of Noto Sans Mono (box drawing + shade blocks; SIL OFL), each
   beside its licence file.
+- `brand/` — the generated brand assets: logomark, wordmark, horizontal and
+  stacked lockups (light and dark), and the rounded icon, as text-outlined SVG
+  plus 512/1024 PNG. `favicon.svg` is the icon, ready to serve as a site favicon.
+- `cmd/brand` — the generator (`mise run brand`). It reads `fonts/` and the
+  palette in `tokens.css`, and writes `brand/` and `favicon.svg`. Needs
+  `woff2_decompress`, `inkscape` and `rsvg-convert`; the output is committed.
 
 The contract — what the tokens mean and how to use them — is in
 [DESIGN.md](DESIGN.md). The full component contract lives with the app's
@@ -26,11 +32,14 @@ want:
 https://github.com/runbooks-help/design-system/releases/download/vX.Y.Z/tokens.css
 https://github.com/runbooks-help/design-system/releases/download/vX.Y.Z/fonts.css
 https://github.com/runbooks-help/design-system/releases/download/vX.Y.Z/fonts.tar.gz
+https://github.com/runbooks-help/design-system/releases/download/vX.Y.Z/brand.tar.gz
+https://github.com/runbooks-help/design-system/releases/download/vX.Y.Z/favicon.svg
 ```
 
 `fonts.css` expects a `fonts/` directory beside it (the `fonts.tar.gz` unpacks to
 one), so a consumer drops the three pieces together and links both stylesheets.
-Pin the tag; a floating `latest` is not published.
+`brand.tar.gz` unpacks to `brand/` plus `favicon.svg`. Pin the tag; a floating
+`latest` is not published.
 
 ## Licence
 
