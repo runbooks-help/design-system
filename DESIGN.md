@@ -39,7 +39,7 @@ Rules:
   fallback.
 - Code weight: `--mono-weight` is 450, or 600 under the bold-code preference.
 - The type scale is `--text-2xs … --text-2xl`, all multiplied by `--text-scale`.
-  The reading-size preference moves `--text-scale` and nothing else — spacing and
+  The reading-size preference moves `--text-scale` and nothing else; spacing and
   structural sizes stay put.
 - The prose measure caps at `--measure` (72ch); tables and code keep the column.
 
@@ -67,5 +67,5 @@ Rules:
 ## Full contract
 
 The app's live styleguide (`/styleguide`) and its agent-readable mirror
-(`/styleguide/llms`) are the full contract — foundations and every component,
+(`/styleguide/llms`) are the full contract: foundations and every component,
 rendered from the real components so they cannot silently drift.

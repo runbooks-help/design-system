@@ -6,20 +6,20 @@ later) consumes the same values by **pinned version** rather than copying them.
 
 ## What's here
 
-- `tokens.css` — the token layer: colours for both themes, spacing, structural
+- `tokens.css`: the token layer. Colours for both themes, spacing, structural
   sizes, type scale, leading, radius, shadows, motion. Values only.
-- `fonts.css` — the `@font-face` declarations for the self-hosted fonts.
-- `fonts/` — Atkinson Hyperlegible Next + Mono (variable, latin; SIL OFL) and the
+- `fonts.css`: the `@font-face` declarations for the self-hosted fonts.
+- `fonts/`: Atkinson Hyperlegible Next + Mono (variable, latin; SIL OFL) and the
   Shade Mono subset of Noto Sans Mono (box drawing + shade blocks; SIL OFL), each
   beside its licence file.
-- `brand/` — the generated brand assets: logomark, wordmark, horizontal and
+- `brand/`: the generated brand assets: logomark, wordmark, horizontal and
   stacked lockups (light and dark), and the rounded icon, as text-outlined SVG
   plus 512/1024 PNG. `favicon.svg` is the icon, ready to serve as a site favicon.
-- `cmd/brand` — the generator (`mise run brand`). It reads `fonts/` and the
+- `cmd/brand`: the generator (`mise run brand`). It reads `fonts/` and the
   palette in `tokens.css`, and writes `brand/` and `favicon.svg`. Needs
   `woff2_decompress`, `inkscape` and `rsvg-convert`; the output is committed.
 
-The contract — what the tokens mean and how to use them — is in
+The contract (what the tokens mean and how to use them) is in
 [DESIGN.md](DESIGN.md). The full component contract lives with the app's
 styleguide.
 
@@ -43,5 +43,5 @@ one), so a consumer drops the three pieces together and links both stylesheets.
 
 ## Licence
 
-The token layer and `fonts.css` are FSL-1.1-MIT. The fonts are SIL OFL 1.1 — see
+The token layer and `fonts.css` are FSL-1.1-MIT. The fonts are SIL OFL 1.1; see
 `fonts/*.LICENSE`.
