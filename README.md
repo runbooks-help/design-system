@@ -14,7 +14,9 @@ later) consumes the same values by **pinned version** rather than copying them.
   beside its licence file.
 - `brand/`: the generated brand assets: logomark, wordmark, horizontal and
   stacked lockups (light and dark), and the rounded icon, as text-outlined SVG
-  plus 512/1024 PNG. `favicon.svg` is the icon, ready to serve as a site favicon.
+  plus 512/1024 PNG. `favicon.svg` is the icon, ready to serve as a site
+  favicon. `social-card-on-dark` is the 1200x630 link preview (the OG image),
+  dark-only because a preview crawler never themes it.
 - `cmd/brand`: the generator (`mise run brand`). It reads `fonts/` and the
   palette in `tokens.css`, and writes `brand/` and `favicon.svg`. Needs
   `woff2_decompress`, `inkscape` and `rsvg-convert`; the output is committed.
